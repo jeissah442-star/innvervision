@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>innvervision | أعمالنا</title>
+<meta name="description" content="innvervision — websites, branding and social media design. Selected work.">
+<meta name="theme-color" content="#0e0f13">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0e0f13; --bg2:#15171d; --card:#1b1e26; --line:#2a2e39;
+  --text:#eef0f4; --muted:#9aa1b2; --accent:#ff6b3d; --accent2:#ffb547; --mint:#5de0b5;
+  --r:22px;
+}
+html[lang=ar]{--body:"Readex Pro",system-ui,sans-serif;--display:"Readex Pro",sans-serif}
+html[lang=en]{--body:"Inter",system-ui,sans-serif;--display:"Instrument Serif",Georgia,serif}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer}
+.wrap{width:min(1200px,100%);margin-inline:auto;padding-inline:20px}
+
+/* nav */
+.nav{position:fixed;inset-inline:0;top:0;z-index:40;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgb(14 15 19 / .82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:20px;height:70px}
+.logo{font-family:"Inter",sans-serif;font-weight:700;font-size:20px;letter-spacing:-.02em;display:flex;align-items:center;gap:10px;direction:ltr}
+.logo i{width:30px;height:30px;border-radius:9px;background:conic-gradient(from 200deg,var(--accent),var(--accent2),var(--mint),var(--accent));display:grid;place-items:center}
+.logo i::after{content:"";width:12px;height:12px;border-radius:50%;background:var(--bg)}
+.links{display:flex;gap:26px;margin-inline-start:auto;font-size:14.5px;color:var(--muted)}
+.links a:hover{color:var(--text)}
+.lang{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:600}
+@media (max-width:860px){.links{display:none}.lang{margin-inline-start:auto}}
+
+/* hero */
+.hero{min-height:100svh;display:grid;align-items:center;position:relative;overflow:hidden;padding:110px 0 70px}
+.glow{position:absolute;border-radius:50%;filter:blur(90px);opacity:.45;pointer-events:none}
+.g1{width:520px;height:520px;background:var(--accent);top:-160px;inset-inline-end:-120px;animation:drift 14s ease-in-out infinite alternate}
+.g2{width:420px;height:420px;background:#5146e0;bottom:-160px;inset-inline-start:-120px;animation:drift 18s ease-in-out infinite alternate-reverse}
+@keyframes drift{to{transform:translate(60px,40px) scale(1.1)}}
+.hero .wrap{position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:rgb(255 255 255 / .03);border-radius:999px;padding:7px 16px;font-size:13.5px;color:var(--muted)}
+.eyebrow b{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 12px var(--mint)}
+.hero h1{font-family:var(--display);font-weight:600;font-size:clamp(40px,7.4vw,92px);line-height:1.08;margin:22px 0 22px;letter-spacing:-.02em;max-width:980px}
+html[lang=en] .hero h1{font-weight:400;letter-spacing:-.03em}
+.hero h1 .grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+html[lang=en] .hero h1 .grad{font-style:italic}
+.hero p{color:var(--muted);font-size:clamp(16px,2vw,19px);max-width:640px;margin:0 0 34px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:14px 26px;font-weight:600;font-size:15px;border:0;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.main{background:var(--text);color:var(--bg)}
+.btn.ghost{border:1px solid var(--line);background:transparent}
+.btn svg{width:18px;height:18px}
+html[dir=rtl] .btn svg.arr{transform:scaleX(-1)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:64px}
+.stats div{background:var(--bg);padding:22px}
+.stats b{display:block;font-family:"Inter",sans-serif;font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.stats span{font-size:13.5px;color:var(--muted)}
+@media (max-width:760px){.stats{grid-template-columns:1fr 1fr}}
+
+/* marquee of thumbs */
+.strip{overflow:hidden;padding:10px 0 0;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.strip .track{display:flex;gap:16px;width:max-content;animation:mq 50s linear infinite}
+html[dir=rtl] .strip .track{animation-name:mqr}
+@keyframes mq{to{transform:translateX(-50%)}}
+@keyframes mqr{to{transform:translateX(50%)}}
+.strip img{height:230px;width:auto;border-radius:14px;border:1px solid var(--line)}
+
+/* sections */
+section{padding:110px 0 0}
+.head{display:flex;align-items:end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+.num{font-family:"Inter",sans-serif;font-size:13px;color:var(--accent);font-weight:600;letter-spacing:.14em}
+.head h2{font-family:var(--display);font-weight:600;font-size:clamp(32px,4.6vw,56px);line-height:1.1;margin:8px 0 0;letter-spacing:-.02em}
+html[lang=en] .head h2{font-weight:400}
+.head p{color:var(--muted);max-width:460px;margin:0}
+
+/* project */
+.project{background:var(--bg2);border:1px solid var(--line);border-radius:28px;overflow:hidden;margin-bottom:28px}
+.p-top{display:grid;grid-template-columns:1fr 1.25fr;gap:0}
+@media (max-width:900px){.p-top{grid-template-columns:1fr}}
+.p-info{padding:36px;display:flex;flex-direction:column;gap:16px}
+.tag{display:inline-flex;gap:8px;align-items:center;font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 12px;width:fit-content;max-width:100%}
+.tag i{flex:none}
+.edu-intro>*,.p-top>*,.foryou>*{min-width:0}
+.tag i{width:7px;height:7px;border-radius:50%;background:var(--c,var(--accent))}
+.p-info h3{font-family:var(--display);font-weight:600;font-size:clamp(30px,3.6vw,44px);margin:0;line-height:1.1;letter-spacing:-.02em}
+html[lang=en] .p-info h3{font-weight:400}
+.p-info p{color:var(--muted);margin:0}
+.feat{list-style:none;padding:0;margin:4px 0 0;display:grid;gap:9px}
+.feat li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px}
+.feat li::before{content:"";flex:none;width:18px;height:18px;margin-top:3px;border-radius:6px;background:var(--c,var(--accent));mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/contain no-repeat}
+.p-info .btn{margin-top:auto;width:max-content}
+.browser{margin:24px;margin-inline-start:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#0b0c10;align-self:center;box-shadow:0 30px 60px -30px #000}
+@media (max-width:900px){.browser{margin:0 20px 20px}}
+.bar{display:flex;gap:6px;align-items:center;padding:10px 12px;background:#14161c;border-bottom:1px solid var(--line);direction:ltr}
+.bar i{width:10px;height:10px;border-radius:50%;background:#3a3f4c}
+.bar i:nth-child(1){background:#ff5f57}.bar i:nth-child(2){background:#febc2e}.bar i:nth-child(3){background:#28c840}
+.bar span{margin-inline-start:12px;font-size:12px;color:var(--muted);background:#0e0f13;border-radius:6px;padding:3px 12px;flex:1;max-width:280px;font-family:"Inter",sans-serif}
+.slides{position:relative;aspect-ratio:1400/760}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;transition:opacity .8s}
+.slides img.on{opacity:1}
+.dots{display:flex;gap:6px;justify-content:center;padding:10px;direction:ltr}
+.dots button{width:7px;height:7px;border-radius:99px;border:0;background:#3a3f4c;padding:0;transition:width .3s,background .3s}
+.dots button.on{width:22px;background:var(--text)}
+.p-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:0 24px 24px}
+@media (max-width:700px){.p-gallery{grid-template-columns:1fr 1fr}}
+.p-gallery button{border:1px solid var(--line);border-radius:12px;overflow:hidden;padding:0;background:#0b0c10;aspect-ratio:16/10}
+.p-gallery img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s}
+.p-gallery button:hover img{transform:scale(1.05)}
+
+/* education masonry */
+.edu-intro{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;margin-bottom:24px}
+@media (max-width:900px){.edu-intro{grid-template-columns:1fr}}
+.edu-card{background:var(--bg2);border:1px solid var(--line);border-radius:28px;padding:32px}
+.edu-card h3{font-family:var(--display);font-weight:600;font-size:clamp(26px,3vw,36px);margin:12px 0 10px;line-height:1.15}
+html[lang=en] .edu-card h3{font-weight:400}
+.edu-card p{color:var(--muted);margin:0 0 14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:13px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:var(--card)}
+.ig{position:relative;overflow:hidden;padding:0;display:flex;flex-direction:column}
+.ig img{width:100%;flex:1;object-fit:cover;object-position:top}
+.ig .cap{padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--line)}
+.ig .cap b{font-family:"Inter",sans-serif;font-size:26px;letter-spacing:-.02em}
+.ig .cap small{color:var(--muted);display:block;font-size:12.5px}
+.masonry{columns:4 240px;column-gap:16px}
+.tile{break-inside:avoid;margin:0 0 16px;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--card);position:relative;display:block;width:100%;padding:0;text-align:start}
+.tile img{width:100%;height:auto;transition:transform .6s}
+.tile:hover img{transform:scale(1.03)}
+.tile .lbl{position:absolute;inset-inline:10px;bottom:10px;background:rgb(14 15 19 / .82);backdrop-filter:blur(8px);border-radius:10px;padding:8px 12px;font-size:12.5px;opacity:0;transform:translateY(6px);transition:all .3s}
+.tile:hover .lbl,.tile:focus-visible .lbl{opacity:1;transform:none}
+@media (hover:none){.tile .lbl{opacity:1;transform:none}}
+.credit{display:flex;gap:16px;align-items:center;background:linear-gradient(120deg,rgb(255 107 61 / .14),rgb(255 181 71 / .06));border:1px solid rgb(255 107 61 / .35);border-radius:20px;padding:18px 22px;margin:8px 0 22px}
+.credit svg{width:34px;height:34px;flex:none;color:var(--accent2)}
+.credit p{margin:0;font-size:14.5px}
+.credit b{color:var(--accent2)}
+
+/* for you */
+.foryou{background:linear-gradient(140deg,#1d1a30,#14161d 60%);border:1px solid #3a335e;border-radius:28px;overflow:hidden;display:grid;grid-template-columns:1fr 1.1fr}
+@media (max-width:900px){.foryou{grid-template-columns:1fr}}
+.foryou .p-info{padding:40px}
+.foryou .shots{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:24px;align-content:center}
+.foryou .shots img{border-radius:12px;border:1px solid #3a335e;aspect-ratio:16/10;object-fit:cover;object-position:top;width:100%}
+.foryou .shots img:first-child{grid-column:span 2;aspect-ratio:16/9}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:900px){.svc{grid-template-columns:1fr}}
+.svc div{background:var(--bg2);border:1px solid var(--line);border-radius:22px;padding:26px}
+.svc svg{width:40px;height:40px;padding:9px;border-radius:12px;background:var(--card);color:var(--accent2);margin-bottom:14px}
+.svc b{display:block;font-size:18px;margin-bottom:6px}
+.svc p{margin:0;color:var(--muted);font-size:14.5px}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:20px;border:1px solid var(--line);border-radius:22px;overflow:hidden}
+@media (max-width:760px){.process{grid-template-columns:1fr 1fr}}
+.process div{padding:22px;border-inline-end:1px solid var(--line);background:var(--bg2)}
+.process div:last-child{border:0}
+.process small{color:var(--accent);font-family:"Inter",sans-serif;font-weight:600}
+.process b{display:block;margin:4px 0}
+.process span{color:var(--muted);font-size:13.5px}
+
+.end{margin:120px 0 0;padding:90px 0 60px;border-top:1px solid var(--line);text-align:center;position:relative;overflow:hidden}
+.end h2{font-family:var(--display);font-weight:600;font-size:clamp(36px,6vw,74px);line-height:1.08;margin:0 auto 18px;max-width:900px}
+html[lang=en] .end h2{font-weight:400}
+.end p{color:var(--muted);max-width:560px;margin:0 auto 30px}
+.end .ctas{justify-content:center}
+footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:13px;padding:24px 0 40px;border-top:1px solid var(--line)}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:80;background:rgb(6 7 10 / .92);backdrop-filter:blur(6px);display:grid;place-items:center;padding:20px}
+.lb img{max-height:86vh;max-width:min(1100px,100%);width:auto;border-radius:12px;box-shadow:0 30px 80px #000}
+.lb p{color:var(--muted);text-align:center;margin:12px 0 0;font-size:14px}
+.lb .x{position:absolute;top:16px;inset-inline-end:16px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);font-size:22px}
+.lb .nv{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--card);font-size:20px}
+.lb .pv{inset-inline-start:16px}.lb .nx{inset-inline-end:16px}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a class="logo" href="#top"><i></i>innvervision</a>
+    <div class="links"><a href="#web" data-t="nWeb"></a><a href="#edu" data-t="nEdu"></a><a href="#you" data-t="nYou"></a><a href="#svc" data-t="nSvc"></a></div>
+    <button class="lang" id="lang" type="button" data-t="lang"></button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="glow g1"></div><div class="glow g2"></div>
+  <div class="wrap">
+    <span class="eyebrow"><b></b><span data-t="eyebrow"></span></span>
+    <h1 data-h="h1"></h1>
+    <p data-t="lead"></p>
+    <div class="ctas">
+      <a class="btn main" href="#web"><span data-t="seeWork"></span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn ghost" href="#you" data-t="yourDemo"></a>
+    </div>
+    <div class="stats">
+      <div><b>2</b><span data-t="st1"></span></div>
+      <div><b>4</b><span data-t="st2"></span></div>
+      <div><b>48</b><span data-t="st3"></span></div>
+      <div><b data-count="1599">0</b><span data-t="st4"></span></div>
+    </div>
+  </div>
+</header>
+
+<div class="strip" aria-hidden="true"><div class="track" id="strip"></div></div>
+
+<main class="wrap">
+
+  <section id="web">
+    <div class="head rv"><div><div class="num">01 — WEB</div><h2 data-t="webH"></h2></div><p data-t="webP"></p></div>
+
+    <article class="project rv" style="--c:#c9577a">
+      <div class="p-top">
+        <div class="p-info">
+          <span class="tag"><i></i><span data-t="luneTag"></span></span>
+          <h3>Lune by Noon</h3>
+          <p data-t="luneP"></p>
+          <ul class="feat" id="luneFeat"></ul>
+          <a class="btn main" href="https://lunebynoon.com" target="_blank" rel="noopener"><span>lunebynoon.com</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+        <div class="browser"><div class="bar"><i></i><i></i><i></i><span>lunebynoon.com</span></div>
+          <div class="slides" data-slides><img src="p-lune-door.jpg" alt="Lune by Noon door intro" class="on"><img src="p-lune-hero.jpg" alt="Lune by Noon homepage"><img src="p-lune-cats.jpg" alt="Lune by Noon categories"><img src="p-lune-custom.jpg" alt="Lune by Noon customiser"></div>
+          <div class="dots"></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="project rv" style="--c:#e0303a">
+      <div class="p-top">
+        <div class="p-info">
+          <span class="tag"><i></i><span data-t="kyTag"></span></span>
+          <h3>KYNEX Holding</h3>
+          <p data-t="kyP"></p>
+          <ul class="feat" id="kyFeat"></ul>
+          <a class="btn main" href="https://www.kynexpower.com" target="_blank" rel="noopener"><span>kynexpower.com</span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </div>
+        <div class="browser"><div class="bar"><i></i><i></i><i></i><span>kynexpower.com</span></div>
+          <div class="slides" data-slides><img src="p-kynex-home.jpg" alt="KYNEX country selector" class="on"><img src="p-kynex-footer.jpg" alt="KYNEX footer and contact"></div>
+          <div class="dots"></div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section id="edu">
+    <div class="head rv"><div><div class="num">02 — EDUCATION</div><h2 data-t="eduH"></h2></div><p data-t="eduP"></p></div>
+
+    <div class="edu-intro">
+      <div class="edu-card rv">
+        <span class="tag" style="--c:#e0303a"><i></i>Lincoln University College · School of Education</span>
+        <h3 data-t="eduRole"></h3>
+        <p data-t="eduRoleP"></p>
+        <div class="chips" id="eduChips"></div>
+      </div>
+      <a class="edu-card ig rv" href="https://www.instagram.com/schoolofeducation/" target="_blank" rel="noopener">
+        <img src="p-instagram.jpg" alt="@schoolofeducation Instagram">
+        <div class="cap"><span><small data-t="igLbl"></small>@schoolofeducation</span><span style="text-align:end"><b>1,599</b><small data-t="followers"></small></span></div>
+      </a>
+    </div>
+
+    <div class="credit rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/><path d="M9 8h7M9 12h5"/></svg><p data-h="credit"></p></div>
+
+    <div class="masonry" id="masonry"></div>
+  </section>
+
+  <section id="you">
+    <div class="head rv"><div><div class="num">03 — FOR YOU</div><h2 data-t="youH"></h2></div><p data-t="youP"></p></div>
+    <div class="foryou rv">
+      <div class="p-info">
+        <span class="tag" style="--c:#e3a72f"><i></i><span data-t="youTag"></span></span>
+        <h3 data-t="youTitle"></h3>
+        <ul class="feat" id="youFeat" style="--c:#e3a72f"></ul>
+        <a class="btn main" href="https://jeissah442-star.github.io/courses-demo/" target="_blank" rel="noopener"><span data-t="openDemo"></span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      </div>
+      <div class="shots"><img src="p-radwa-hero.jpg" alt="Course site homepage"><img src="p-radwa-intro.jpg" alt="Book intro"><img src="p-radwa-open.jpg" alt="Book opening"></div>
+    </div>
+  </section>
+
+  <section id="svc">
+    <div class="head rv"><div><div class="num">04 — SERVICES</div><h2 data-t="svcH"></h2></div></div>
+    <div class="svc">
+      <div class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg><b data-t="s1"></b><p data-t="s1p"></p></div>
+      <div class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.6 7.1 18.2l.9-5.5-4-3.9 5.5-.8z"/></svg><b data-t="s2"></b><p data-t="s2p"></p></div>
+      <div class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg><b data-t="s3"></b><p data-t="s3p"></p></div>
+    </div>
+    <div class="process rv" id="process"></div>
+  </section>
+
+  <div class="end rv">
+    <h2 data-t="endH"></h2>
+    <p data-t="endP"></p>
+    <div class="ctas"><a class="btn main" href="https://jeissah442-star.github.io/courses-demo/" target="_blank" rel="noopener" data-t="openDemo"></a><a class="btn ghost" href="#web" data-t="backTop"></a></div>
+  </div>
+
+  <footer><span>© 2026 innvervision</span><span data-t="foot"></span></footer>
+</main>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true"><button class="x" data-lbclose aria-label="Close">×</button><button class="nv pv" data-lbprev aria-label="Previous">‹</button><div><img id="lbimg" alt=""><p id="lbcap"></p></div><button class="nv nx" data-lbnext aria-label="Next">›</button></div>
+
+<script>
+let L = "ar";
+const T = {
+ ar:{
+  lang:"English", nWeb:"المواقع", nEdu:"التعليم", nYou:"ديمو مركزك", nSvc:"الخدمات",
+  eyebrow:"متاحين لمشاريع جديدة · مصر وماليزيا والخليج",
+  h1:"بنصمم مواقع <span class='grad'>بتخلي الناس تحجز</span> وتشتري",
+  lead:"innvervision استوديو صغير بيعمل مواقع وتصميمات وسوشيال ميديا. دي مختارات من شغلنا الحقيقي: متجر إلكتروني كامل، موقع شركة في 4 دول، وهوية ومحتوى لكلية تعليم جامعية.",
+  seeWork:"شوفي الشغل", yourDemo:"ديمو مركزك",
+  st1:"مواقع لايف لعملاء", st2:"دول في موقع واحد (KYNEX)", st3:"صفحة مجلة سنوية من تصميمنا", st4:"متابع على حساب بنديره",
+  webH:"مواقع شغالة دلوقتي", webP:"الاتنين لايف على الإنترنت. افتحيهم وجربيهم بنفسك.",
+  luneTag:"متجر إلكتروني · من الصفر للنهاية",
+  luneP:"براند بيجامات حريمي في مصر. صممنا وبنينا المتجر كله من أول فكرة لحد الإطلاق، بتجربة تحسسك إنك داخلة أوضتك.",
+  luneF:["مقدمة تفاعلية: باب بيتفتح بصوت وتدخلي منه للمتجر","خاصية تفصيل القطعة: اكتبي حروفك وشوفي معاينة لايف على البيجامة","Mix & Match: ركّبي الطقم بنفسك من أكتر من تصميم","كولكشنز وباندلز وعروض، والأسعار بالجنيه","عربي وإنجليزي، وسلة وبحث"],
+  kyTag:"موقع شركة · 4 دول",
+  kyP:"شركة تركيبات ومقاولات كهربائية بتشتغل في مصر والكويت وتونس والإمارات. أعدنا تنظيم الموقع بالكامل عشان كل دولة يبقى ليها مشاريعها.",
+  kyF:["صفحة اختيار الدولة: تدوسي على العلم تروحي لمشاريع الدولة دي","تنظيم المشاريع حسب الدولة ونوع الخدمة","إعادة كتابة صفحة من نحن بشكل احترافي","تصليح الزراير والتنقل وتجربة الاستخدام"],
+  eduH:"تصميم لقطاع التعليم", eduP:"ده المجال اللي إنتي فيه. إحنا مسؤولين عن الميديا والتصميم لكلية التعليم في جامعة Lincoln بماليزيا من أغسطس 2025.",
+  eduRole:"Media Manager · كلية التعليم", eduRoleP:"كل اللي بيطلع من الكلية للجمهور بيعدي علينا: بوسترات الكورسات والفعاليات، الشهادات، كاروسيل الإنستجرام لكل فعالية، هوية المؤتمر الدولي، الإعلانات الممولة، والمجلة السنوية.",
+  chips:["إنستجرام وفيسبوك وتيك توك ويوتيوب","هوية مؤتمر ICOGE الدولي","حملات ميتا ممولة","بوسترات كورسات وورش","شهادات","المجلة السنوية"],
+  igLbl:"الحساب اللي بنديره", followers:"متابع",
+  credit:"المجلة السنوية 2025 لكلية التعليم: <b>48 صفحة</b>، وفي صفحة الـ Masthead مكتوب «Design & Production: Ahmed Essam Mansour».",
+  youH:"وعملنالك ديمو مخصوص", youP:"بدل ما نكلمك عن الشغل، عملنا نسخة أولية من موقع مركزك عشان تشوفيه بنفسك.",
+  youTag:"معاينة لموقع مركزك", youTitle:"موقع كورسات بالحجز والدفع ولوحة تحكم",
+  youF:["مقدمة على شكل كتاب بيتفتح","عربي وإنجليزي بزرار واحد","كورسات بالسعر قبل وبعد الخصم وعدد الأماكن","حجز ودفع بفودافون كاش وانستاباي مع رفع إيصال التحويل","لوحة تحكم تأكدي منها الحجوزات وتغيري الأسعار"],
+  openDemo:"افتحي الديمو", backTop:"شوفي الشغل تاني",
+  svcH:"بنعمل إيه",
+  s1:"تصميم وتطوير مواقع", s1p:"مواقع ومتاجر بالعربي والإنجليزي، سريعة على الموبايل، وفيها حجز ودفع ولوحة تحكم.",
+  s2:"هوية بصرية وتصميم", s2p:"لوجو، ألوان، بوسترات، شهادات، مطبوعات، ومجلات.",
+  s3:"سوشيال ميديا", s3p:"محتوى وتصميم بوستات وكاروسيل وإدارة حسابات وإعلانات ممولة.",
+  proc:[["01","نسمعك","نفهم المركز والطلاب والكورسات"],["02","ديمو","نسخة أولية تشوفيها قبل أي حاجة"],["03","التنفيذ","الموقع الحقيقي ببياناتك ولوجوك"],["04","الإطلاق","نرفعه ونفضل معاكي بعدها"]],
+  endH:"خلينا نعمل لمركزك نفس المستوى", endP:"الديمو جاهز. ابعتيلنا بيانات مركزك ونحوّله لموقعك الحقيقي.",
+  foot:"مواقع · هوية · سوشيال ميديا",
+  tiles:{"icoge-slide":"هوية مؤتمر ICOGE الدولي · شاشة الافتتاح","icoge-poster":"بوستر المؤتمر الدولي ICOGE","poster-colloquium":"بوستر فعالية · Mini Colloquium","poster-welcome":"بوستر ترحيب · برنامج تبادل أكاديمي دولي","mag-cover":"غلاف المجلة السنوية 2025","mag-contents":"المجلة السنوية · الفهرس","mag-masthead":"المجلة السنوية · كريديت التصميم","poster-symposium":"برنامج ندوة دولية","carousel":"كاروسيل إنستجرام · حفل افتتاح","tesol":"كاروسيل إنستجرام · دورة TESOL","pamphlet":"بروشور برنامج دولي","mag-message":"المجلة السنوية · صفحة داخلية"}
+ },
+ en:{
+  lang:"عربي", nWeb:"Websites", nEdu:"Education", nYou:"Your demo", nSvc:"Services",
+  eyebrow:"Open for new projects · Egypt, Malaysia & the Gulf",
+  h1:"We design websites <span class='grad'>that make people book</span> and buy",
+  lead:"innvervision is a small studio for websites, design and social media. This is a selection of our real work: a full e-commerce store, a company site across four countries, and the identity and content for a university School of Education.",
+  seeWork:"See the work", yourDemo:"Your center's demo",
+  st1:"live client websites", st2:"countries on one site (KYNEX)", st3:"magazine pages we designed", st4:"followers on an account we run",
+  webH:"Websites, live today", webP:"Both are live. Open them and try them yourself.",
+  luneTag:"E-commerce · built end to end",
+  luneP:"A women's pyjama brand in Egypt. We designed and built the whole store from first idea to launch, with an experience that feels like stepping into your own room.",
+  luneF:["Interactive intro: a door that opens, with sound, into the store","Personalisation: type your initials and see a live preview on the pyjamas","Mix & Match: build your own set from different designs","Collections, bundles and offers, priced in EGP","Arabic and English, cart and search"],
+  kyTag:"Company website · 4 countries",
+  kyP:"An electrical installation and contracting company working in Egypt, Kuwait, Tunisia and the UAE. We restructured the site so every country has its own projects.",
+  kyF:["Country selector: tap a flag to land on that country's projects","Projects organised by country and service line","About Us rewritten professionally","Fixed buttons, navigation and overall usability"],
+  eduH:"Design for education", eduP:"Your sector. We have run media and design for the School of Education at Lincoln University College, Malaysia, since August 2025.",
+  eduRole:"Media Manager · School of Education", eduRoleP:"Everything the school puts in front of the public goes through us: course and event posters, certificates, an Instagram carousel for every event, the international conference identity, paid ads, and the annual magazine.",
+  chips:["Instagram, Facebook, TikTok & YouTube","ICOGE conference identity","Paid Meta campaigns","Course & workshop posters","Certificates","Annual magazine"],
+  igLbl:"Account we run", followers:"followers",
+  credit:"The School of Education Annual Magazine 2025: <b>48 pages</b>, credited on the masthead as “Design & Production: Ahmed Essam Mansour”.",
+  youH:"And we built you a demo", youP:"Rather than just tell you about our work, we built a first version of your center's site so you can see it yourself.",
+  youTag:"Preview of your center's site", youTitle:"A course site with booking, payment and an admin panel",
+  youF:["An intro shaped like a book that opens","Arabic and English with one button","Courses with before/after prices and seats left","Booking and payment by Vodafone Cash or InstaPay, with receipt upload","An admin panel to confirm bookings and change prices"],
+  openDemo:"Open the demo", backTop:"See the work again",
+  svcH:"What we do",
+  s1:"Web design & development", s1p:"Arabic and English sites and stores, fast on mobile, with booking, payments and admin panels.",
+  s2:"Brand & graphic design", s2p:"Logos, colours, posters, certificates, print and magazines.",
+  s3:"Social media", s3p:"Content, post and carousel design, account management and paid ads.",
+  proc:[["01","Listen","Understand your center, students and courses"],["02","Demo","A first version you see before anything else"],["03","Build","The real site with your data and logo"],["04","Launch","We publish it and stay with you after"]],
+  endH:"Let's give your center the same level", endP:"Your demo is ready. Send us your center's details and we'll turn it into your real site.",
+  foot:"Websites · Branding · Social media",
+  tiles:{"icoge-slide":"ICOGE international conference · opening screen","icoge-poster":"ICOGE international conference poster","poster-colloquium":"Event poster · Mini Colloquium","poster-welcome":"Welcome poster · international exchange programme","mag-cover":"Annual Magazine 2025 · cover","mag-contents":"Annual Magazine · contents","mag-masthead":"Annual Magazine · design credit","poster-symposium":"International symposium programme","carousel":"Instagram carousel · opening ceremony","tesol":"Instagram carousel · TESOL course","pamphlet":"International programme pamphlet","mag-message":"Annual Magazine · inner page"}
+ }
+};
+const TILES = ["icoge-slide","mag-cover","poster-colloquium","carousel","poster-welcome","mag-masthead","icoge-poster","tesol","poster-symposium","mag-contents","pamphlet","mag-message"];
+const STRIP = ["lune-hero","poster-colloquium","kynex-home","mag-cover","icoge-slide","carousel","lune-cats","poster-welcome","radwa-hero","icoge-poster"];
+const $ = s => document.querySelector(s);
+const t = k => T[L][k];
+
+function render(){
+  document.documentElement.lang = L; document.documentElement.dir = L==="ar"?"rtl":"ltr";
+  document.title = L==="ar" ? "innvervision | أعمالنا" : "innvervision | Selected work";
+  document.querySelectorAll("[data-t]").forEach(e=>e.textContent=t(e.dataset.t));
+  document.querySelectorAll("[data-h]").forEach(e=>e.innerHTML=t(e.dataset.h));
+  const li = a => a.map(x=>`<li>${x}</li>`).join("");
+  $("#luneFeat").innerHTML = li(t("luneF")); $("#kyFeat").innerHTML = li(t("kyF")); $("#youFeat").innerHTML = li(t("youF"));
+  $("#eduChips").innerHTML = t("chips").map(x=>`<span>${x}</span>`).join("");
+  $("#process").innerHTML = t("proc").map(p=>`<div><small>${p[0]}</small><b>${p[1]}</b><span>${p[2]}</span></div>`).join("");
+  $("#masonry").innerHTML = TILES.map((k,i)=>`<button class="tile rv in" data-lb="${i}"><img src="p-${k}.jpg" alt="${t("tiles")[k]}"><span class="lbl">${t("tiles")[k]}</span></button>`).join("");
+}
+const row = STRIP.map(k=>`<img src="p-${k}.jpg" alt="" loading="lazy">`).join("");
+$("#strip").innerHTML = row + row;
+
+/* slideshows */
+document.querySelectorAll("[data-slides]").forEach(box=>{
+  const imgs=[...box.querySelectorAll("img")], dots=box.nextElementSibling; let i=0, tm;
+  dots.innerHTML = imgs.map((_,n)=>`<button aria-label="${n+1}" class="${n?"":"on"}"></button>`).join("");
+  const go=n=>{ imgs[i].classList.remove("on"); dots.children[i].classList.remove("on"); i=(n+imgs.length)%imgs.length; imgs[i].classList.add("on"); dots.children[i].classList.add("on"); };
+  [...dots.children].forEach((d,n)=>d.onclick=()=>{go(n);clearInterval(tm);});
+  tm=setInterval(()=>go(i+1),3200);
+  box.style.cursor="zoom-in"; box.onclick=()=>openLB(imgs.map(x=>({src:x.src,cap:x.alt})), i);
+});
+
+/* lightbox */
+let lbList=[], lbI=0;
+function openLB(list,i){ lbList=list; lbI=i; showLB(); $("#lb").hidden=false; document.body.style.overflow="hidden"; }
+function showLB(){ $("#lbimg").src=lbList[lbI].src; $("#lbcap").textContent=lbList[lbI].cap; }
+function closeLB(){ $("#lb").hidden=true; document.body.style.overflow=""; }
+document.addEventListener("click",e=>{
+  const tile=e.target.closest("[data-lb]");
+  if(tile){ openLB(TILES.map(k=>({src:"p-"+k+".jpg",cap:t("tiles")[k]})), +tile.dataset.lb); return; }
+  if(e.target.closest("[data-lbclose]")||e.target.id==="lb") closeLB();
+  if(e.target.closest("[data-lbnext]")){ lbI=(lbI+1)%lbList.length; showLB(); }
+  if(e.target.closest("[data-lbprev]")){ lbI=(lbI-1+lbList.length)%lbList.length; showLB(); }
+});
+document.addEventListener("keydown",e=>{ if($("#lb").hidden) return; if(e.key==="Escape") closeLB(); if(e.key==="ArrowRight"||e.key==="ArrowLeft"){ const f=(e.key==="ArrowRight")===(L==="en"); lbI=(lbI+(f?1:-1)+lbList.length)%lbList.length; showLB(); } });
+
+$("#lang").onclick=()=>{ L=L==="ar"?"en":"ar"; render(); try{localStorage.setItem("pl",L)}catch(_){} };
+addEventListener("scroll",()=>$("#nav").classList.toggle("scrolled",scrollY>20),{passive:true});
+
+const io="IntersectionObserver" in window ? new IntersectionObserver(es=>es.forEach(x=>{ if(x.isIntersecting){ x.target.classList.add("in"); io.unobserve(x.target);} }),{threshold:.1}) : null;
+document.querySelectorAll(".rv").forEach(el=> io?io.observe(el):el.classList.add("in"));
+
+/* counter */
+const c=document.querySelector("[data-count]"); const end=+c.dataset.count; let st=null;
+const step=ts=>{ if(!st) st=ts; const p=Math.min(1,(ts-st)/1600); c.textContent=Math.round(end*(1-Math.pow(1-p,3))).toLocaleString("en-US"); if(p<1) requestAnimationFrame(step); };
+matchMedia("(prefers-reduced-motion: reduce)").matches ? c.textContent="1,599" : requestAnimationFrame(step);
+
+try{ const s=localStorage.getItem("pl"); if(s==="en"||s==="ar") L=s; }catch(_){}
+render();
+</script>
+</body>
+</html>
